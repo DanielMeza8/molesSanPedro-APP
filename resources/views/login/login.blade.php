@@ -14,22 +14,37 @@
                     <div class="col-md">
                         <div class="card-body align-items-center">
                         <h5 class="card-title text-center mt-4 fs-3"><strong>Login</strong></h5>
-                            <div class="mb-3 row">
-                                <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-                                <div class="col-sm-10">
-                                <input type="text" class="form-control" id="staticEmail" placeholder="email@example.com">
+                            <form action="{{route('entrar')}}" method="POST">
+                                @csrf
+                                <div class="mb-3 row">
+                                    <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" id="email" name="email" required>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="mb-3 row">
-                                <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-                                <div class="col-sm-10">
-                                <input type="password" class="form-control" id="inputPassword">
+                                <div class="mb-3 row">
+                                    <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+                                    <div class="col-sm-10">
+                                        <input type="password" class="form-control" id="password" name="password" required>
+                                    </div>
                                 </div>
-                            </div>
-                            <!-- <button type="submit" class="btn btn-primary mt-4">Iniciar Sesion</button> -->
-                            <div class="d-grid gap-2">
-                                <button type="button" class="btn btn-primary border rounded-pill btn-lg">Iniciar Sesion</button>
-                                <a href="./registro.html" class="btn btn-light border rounded-pill btn-lg">Registrarse</a>
+                                <button type="submit" class="btn btn-primary mt-4">Iniciar Sesion</button> 
+                                {{-- <div class="d-grid gap-2">
+                                    <button type="button" class="btn btn-primary border rounded-pill btn-lg">Iniciar Sesion</button>
+                                    <a href="./registro.html" class="btn btn-light border rounded-pill btn-lg">Registrarse</a>
+                                </div> --}}
+                            </form>
+                            <!--validacion que viene de logera-->
+                            <div>
+                                @if ($errors->any())
+                                    <p>
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </p>
+                                @endif
                             </div>
                         </div>
                     </div>

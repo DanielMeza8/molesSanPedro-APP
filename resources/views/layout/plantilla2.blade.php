@@ -15,9 +15,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Rubik:wght@400;500&display=swap" rel="stylesheet"> 
 
         <!-- Icon Font Stylesheet -->
-        {{-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/> --}}
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
         <!-- Libraries Stylesheet -->
@@ -25,13 +23,18 @@
         <link href="{{asset('lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
         <link href="{{asset('lib/lightbox/css/lightbox.min.css')}}" rel="stylesheet">
 
+
+        {{-- alertify --}}
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
+
+
+
         <!-- Customized Bootstrap Stylesheet -->
         <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
 
         <!-- Template Stylesheet -->
         <link href="{{asset('css/style.css')}}" rel="stylesheet">
-        <link rel="stylesheet" href="{{asset('gridder/css/jquery.gridder.min.css')}}">
-        
     </head>
 
     <body style="background:  #F5F5DC;">
@@ -39,7 +42,7 @@
         <!-- Spinner Start -->
         <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
             <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Mole San Pedro...</span>
+                <span class="sr-only">Mole San Pedro</span>
             </div>
         </div>
         <!-- Spinner End -->
@@ -48,7 +51,7 @@
         <!-- Navbar & Hero Start -->
         <div class="container-fluid header position-relative overflow-hidden p-0">
             <nav class="navbar navbar-expand-lg fixed-top navbar-light px-4 px-lg-5 py-3 py-lg-0">
-                <a href="{{route('inicio')}}" class="navbar-brand p-0">
+                <a href="index.html" class="navbar-brand p-0">
                     <h1 class="display-6 textoCafe m-0"><img src="{{asset('img/LOGO.ico')}}" alt="Bootstrap" width="30" height="40">Mole San Pedro</h1>
                     <!-- <img src="img/logo.png" alt="Logo"> -->
                 </a>
@@ -58,22 +61,21 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0">
                         <a href="{{route('inicio')}}" class="nav-item nav-link active">Home</a>
-                        <a href="{{route('productos')}}" class="nav-item nav-link">Productos</a>
-                        <a href="{{route('acercaDe')}}" class="nav-item nav-link">Acerca de nosotros</a>
-                        {{-- <div class="nav-item dropdown">
+                        <a href="about.html" class="nav-item nav-link">Productos</a>
+                        <a href="service.html" class="nav-item nav-link">Acerca de nosotros</a>
+                        <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Categorias</a>
                             <div class="dropdown-menu m-0">
-                                {{-- <a href="feature.html" class="dropdown-item">Features</a>
+                                <a href="feature.html" class="dropdown-item">Features</a>
                                 <a href="pricing.html" class="dropdown-item">Pricing</a>
                                 <a href="blog.html" class="dropdown-item">Blog</a>
                                 <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                <a href="404.html" class="dropdown-item">404 Page</a> 
+                                <a href="404.html" class="dropdown-item">404 Page</a>
                             </div>
-                        </div> --}}
-                        <a href="{{route('recetas')}}" class="nav-item nav-link">Recetas</a>
+                        </div>
                         <a href="#contacto" class="nav-item nav-link">Contacto</a>
                     </div>
-                    <a href="{{route('login')}}" class="btn btn-light border rounded-pill py-2 px-4 me-4">Iniciar Sesi&oacute;n</a>
+                    <a href="{{route('logout')}}" class="btn btn-light border rounded-pill py-2 px-4 me-4">Cerrar Sesi&oacute;n</a>
                     {{-- <a href="./registro.html" class="btn btn-primary border rounded-pill py-2 px-4">Registrarse</a> --}}
                 </div>
             </nav>
@@ -115,13 +117,14 @@
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="{{asset('gridder/js/jquery.gridder.js')}}"></script> 
     <script src="{{asset('lib/wow/wow.min.js')}}"></script>
     <script src="{{asset('lib/easing/easing.min.js')}}"></script>
     <script src="{{asset('lib/waypoints/waypoints.min.js')}}"></script>
     <script src="{{asset('lib/counterup/counterup.min.js')}}"></script>
     <script src="{{asset('lib/owlcarousel/owl.carousel.min.js')}}"></script>
     <script src="{{asset('lib/lightbox/js/lightbox.min.js')}}"></script>
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+
     
 
     <!-- Template Javascript -->
@@ -133,28 +136,3 @@
     </body>
 
 </html>
-<script>
-    $(document).ready(function(){
-        $(".gridder").gridderExpander({
-            scroll: true,
-            scrollOffset: 60,
-                    scrollTo: "listitem", // panel or listitem
-                    animationSpeed: 100,
-                    animationEasing: "easeInOutExpo",
-                    showNav: true,
-                    nextText: "<i class=\"fa-solid fa-arrow-right\"></i>",
-                    prevText: "<i class=\"fa fa-arrow-left\"></i>",
-                    closeText: "<i class=\"fa fa-times\"></i>",
-                    onStart: function () {
-                        console.log("Gridder Inititialized");
-                    },
-                    onContent: function () {
-                        console.log("Gridder Content Loaded");
-                        $(".carousel").carousel();
-                    },
-                    onClosed: function () {
-                        console.log("Gridder Closed");
-                    }
-                });
-    });
-</script>
